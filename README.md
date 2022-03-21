@@ -3,6 +3,8 @@
 [![Newifi D2 - X-WRT](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-newifi-d2.yml/badge.svg)](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-newifi-d2.yml)
 [![Xiaomi R3G - ImmortalWRT](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xiaomi-r3g.yml/badge.svg)](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xiaomi-r3g.yml)
 [![Xiaomi R3G - X-WRT](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-xiaomi-r3g.yml/badge.svg)](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-xiaomi-r3g.yml)
+[![TL-1043ND - Ver3 - Immortal](https://github.com/lukaskronus/Compiled-Router/actions/workflows/tl-wr1043nd-v3.yml/badge.svg)](https://github.com/lukaskronus/Compiled-Router/actions/workflows/tl-wr1043nd-v3.yml)
+[![TL-1043ND - Ver3 - X-WRT](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-tl-wr1043nd.yml/badge.svg)](https://github.com/lukaskronus/Compiled-Router/actions/workflows/xwrt-tl-wr1043nd.yml)
 
 ## Usage
 
