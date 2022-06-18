@@ -6,7 +6,7 @@ on:
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: openwrt-18.06-k5.4
-  CONFIG_FILE: config/immortal-newifi-d2.config
+  CONFIG_FILE: config/newifid2-k5.4.config
   TZ: Asia/Ho_Chi_Minh
 
 jobs:
