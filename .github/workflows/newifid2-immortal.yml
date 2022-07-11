@@ -1,17 +1,17 @@
-name: NewifiD2 - k5.4
+name: Newifi D2 - ImmortalWRT
 
 on:
   workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
-  REPO_BRANCH: openwrt-18.06-k5.4
-  CONFIG_FILE: config/newifid2-k5.4.config
+  REPO_BRANCH: v21.02.1
+  CONFIG_FILE: newifid2-immortal.config
   TZ: Asia/Ho_Chi_Minh
 
 jobs:
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - name: Checkout
@@ -23,11 +23,7 @@ jobs:
       run: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get -qq update
-        sudo -E apt-get -y install build-essential ccache ecj fastjar file g++ gawk \
-        gettext git java-propose-classpath libelf-dev libncurses5-dev \
-        libncursesw5-dev libssl-dev python python2.7-dev python3 unzip wget \
-        python-distutils-extra python3-setuptools python3-dev rsync subversion \
-        swig time xsltproc zlib1g-dev
+        sudo -E apt-get -y install build-essential gawk gcc-multilib flex git gettext libncurses5-dev libssl-dev python3-distutils zlib1g-dev unzip
         sudo -E apt-get -qq autoremove --purge
         sudo -E apt-get -qq clean
         sudo timedatectl set-timezone "$TZ"
@@ -41,6 +37,11 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     
+    - name: Clone MTK driver
+      working-directory: ./openwrt
+      run: |
+        git clone https://github.com/Azexios/openwrt-r3p-mtk.git
+        rsync -av ./openwrt-r3p-mtk/target/ ./target && rsync -av --delete ./openwrt-r3p-mtk/package/mt/ ./package/mt
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
@@ -57,7 +58,7 @@ jobs:
       run: |
         sed -i 's/192.168.1.1/192.168.41.1/g' package/base-files/files/bin/config_generate
         echo -e "$(nproc) thread build."
-        make -j$(nproc) V=s
+        make -j$(($(nproc) + 1)) V=s 2>&1 | grep -i -E "^make.*(error|[12345]...Entering dir)"
         echo "::set-output name=status::success"
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
