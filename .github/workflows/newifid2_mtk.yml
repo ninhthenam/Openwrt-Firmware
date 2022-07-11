@@ -2,6 +2,9 @@ name: NewifiD2 - OpenWRT with MTK
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'config/newifid2-openwrt.config'
 
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
