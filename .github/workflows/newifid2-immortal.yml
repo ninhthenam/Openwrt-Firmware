@@ -2,6 +2,9 @@ name: Newifi D2 - ImmortalWRT
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'config/newifid2-immortal.config'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
