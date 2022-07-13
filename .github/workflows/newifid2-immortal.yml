@@ -40,11 +40,6 @@ jobs:
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     
-    - name: Clone MTK driver
-      working-directory: ./openwrt
-      run: |
-        git clone https://github.com/Azexios/openwrt-r3p-mtk.git
-        rsync -av ./openwrt-r3p-mtk/target/ ./target && rsync -av --delete ./openwrt-r3p-mtk/package/mt/ ./package/mt
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
