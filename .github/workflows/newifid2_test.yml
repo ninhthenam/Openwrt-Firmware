@@ -1,16 +1,16 @@
-name: Newifi D2 - LEDE
+name: Newifi D2 - Test
 
 on:
   workflow_dispatch:
   push:
     paths:
-      - 'config/newifid2_lede.config'
+      - 'config/newifid2_test.config'
 
 env:
-  REPO_URL: 'https://github.com/coolsnowwolf/lede.git'
-  REPO_BRANCH: '20220505'
-  CONFIG_FILE: 'newifid2_lede.config'
-  TZ: 'Asia/Ho_Chi_Minh'
+  REPO_URL: https://github.com/openwrt/openwrt.git
+  REPO_BRANCH: v21.02.3
+  CONFIG_FILE: config/newifid2_test.config
+  TZ: Asia/Ho_Chi_Minh
 
 jobs:
   build:
@@ -39,7 +39,7 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-    
+
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |

@@ -6,8 +6,8 @@ on:
 env:
   REPO_URL: https://github.com/openwrt/openwrt.git
   REPO_BRANCH: v21.02.3
-  CONFIG_FILE: config/newifi_d2.config
-  TZ: Asia/Ho_Chi_Minh
+  CONFIG_FILE: config/newifid2.config
+  TZ: UTC
 
 jobs:
   build:

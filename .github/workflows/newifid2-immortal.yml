@@ -4,13 +4,13 @@ on:
   workflow_dispatch:
   push:
     paths:
-      - 'config/newifid2-immortal.config'
+      - 'config/newifid2_immortal.config'
 
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
   REPO_BRANCH: v21.02.1
-  CONFIG_FILE: newifid2-immortal.config
-  TZ: Asia/Ho_Chi_Minh
+  CONFIG_FILE: config/newifid2_immortal.config
+  TZ: UTC
 
 jobs:
   build:
