@@ -1,7 +1,7 @@
 # OpenWRT-Actions
-[![Newifi D2](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifi_d2.yml/badge.svg)](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifi_d2.yml)
+[![Newifi D2](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2.yml/badge.svg)](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2.yml)
 [![Newifi D2 - ImmortalWRT](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2-immortal.yml/badge.svg)](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2-immortal.yml)
-[![Newifi D2 - LEDE](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifi_d2_lede.yml/badge.svg)](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifi_d2_lede.yml)
+[![Newifi D2 - LEDE](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2_lede.yml/badge.svg)](https://github.com/lukaskronus/Router-Firmware/actions/workflows/newifid2_lede.yml)
 ## Usage
 
 - Click the [Use this template](https://github.com/P3TERX/Actions-OpenWrt/generate) button to create a new repository.
